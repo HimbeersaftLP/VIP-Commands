@@ -1,0 +1,11 @@
+name: VIPcmds
+author: HimbeersaftLP
+main: himbeer\vipcmds\main
+version: 1.0.0
+api: [1.0.0]
+commands:
+    vip:
+        description: Main command
+        usage: /vip gmc|gms|fly
+        permission: vipcmds.vip
+        aliases: [premium]
