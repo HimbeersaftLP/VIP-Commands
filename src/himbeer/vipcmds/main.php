@@ -21,8 +21,8 @@ class Main extends PluginBase implements Listener{
                "gms" => "Gamemode changed to §aSurvival",
                "flyon" => "You can fly now!",
                "flyoff" => "You landed!",
-               "noperm" => "§4You don't have the permission to use this command!"
-               "already_in_gamemode" => "§4You are already in this gamemode!"
+               "noperm" => "§4You don't have the permission to use this command!",
+               "already_in_gamemode" => "§4You are already in this gamemode!",
           ));
           $this->saveResource("config.yml");
      }
