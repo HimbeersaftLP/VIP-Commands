@@ -9,3 +9,13 @@ commands:
         usage: /vip gmc|gms|fly
         permission: vipcmds.vip
         aliases: [premium]
+permissions:
+    vipcmds.vip:
+        default: false
+        description: Be a VIP
+    vipcmds.gmc:
+        default: false
+        description: Allow a VIP to use /vip gmc
+    vipcmds.fly:
+        default: false
+        description: Allows a VIP to use /vip fly
