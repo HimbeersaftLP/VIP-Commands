@@ -5,6 +5,7 @@ use pocketmine\event\Listener;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
+use pocketmine\permission\Permission;
 use pocketmine\utils\Config;
 class Main extends PluginBase implements Listener{
      
