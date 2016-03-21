@@ -34,7 +34,7 @@ class Main extends PluginBase implements Listener{
                          $sender->sendMessage("Use this command in-game!");
                     }else{
                          if(!isset($args[0])){
-                              if($sender hasPermission("vipcmds.vip")){
+                              if($sender->hasPermission("vipcmds.vip")){
                                    $vip = $this->config->get("vip");
                                    $sender->sendMessage($vip);
                               }else{
@@ -44,7 +44,7 @@ class Main extends PluginBase implements Listener{
                          }else{
                               switch ($args[0]){
                                    case "gmc":
-                                        if($sender hasPermisson("vipcmds.gm")){
+                                        if($sender->hasPermisson("vipcmds.gm")){
                                              if($sender->getGamemode() == 1){
                                                   $already_in_gamemode = $this->config->get("already_in_gamemode");
                                                   $sender->sendMessage($already_in_gamemode);
@@ -59,7 +59,7 @@ class Main extends PluginBase implements Listener{
                                         }
                                              break;
                                    case "gms":
-                                        if($sender hasPermisson("vipcmds.gm")){
+                                        if($sender->hasPermisson("vipcmds.gm")){
                                              if($sender->getGamemode() == 0){
                                                   $already_in_gamemode = $this->config->get("already_in_gamemode");
                                                   $sender->sendMessage($already_in_gamemode);
@@ -74,7 +74,7 @@ class Main extends PluginBase implements Listener{
                                         }
                                              break;
                                    case "fly":
-                                        if($sender hasPermisson("vipcmds.fly")){
+                                        if($sender->hasPermisson("vipcmds.fly")){
                                              if($sender->getAllowFlight()){
                                                   $flyoff = $this->config->get("flyoff")
                                                   $sender->sendMessage($flyoff);
