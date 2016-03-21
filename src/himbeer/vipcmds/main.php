@@ -73,22 +73,22 @@ class Main extends PluginBase implements Listener{
                                              $sender->sendMessage($noperm);
                                         }
                                              break;
-                                   case "fly":
-                                        if($sender->hasPermisson("vipcmds.fly")){
-                                             if($sender->getAllowFlight()){
-                                                  $flyoff = $this->config->get("flyoff")
-                                                  $sender->sendMessage($flyoff);
-                                                  $sender->setAllowFlight(false);
-                                             }else{
-                                                  $flyon = $this->config->get("flyon")
-                                                  $sender->sendMessage($flyon);
-                                                  $sender->setAllowFlight(true);
-                                             }
-                                        }else{
-                                             $noperm = $this->config->get("noperm");
-                                             $sender->sendMessage($noperm);
-                                        }
-                                             break;
+#                                   case "fly":
+#                                        if($sender->hasPermisson("vipcmds.fly")){
+#                                             if($sender->getAllowFlight()){
+#                                                  $flyoff = $this->config->get("flyoff")
+#                                                  $sender->sendMessage($flyoff);
+#                                                  $sender->setAllowFlight(false);
+#                                             }else{
+#                                                  $flyon = $this->config->get("flyon")
+#                                                  $sender->sendMessage($flyon);
+#                                                  $sender->setAllowFlight(true);
+#                                             }
+#                                        }else{
+#                                             $noperm = $this->config->get("noperm");
+#                                             $sender->sendMessage($noperm);
+#                                        }
+#                                             break;
                               }
                          }
                     }
