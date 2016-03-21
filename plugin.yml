@@ -13,7 +13,7 @@ permissions:
     vipcmds.vip:
         default: false
         description: Be a VIP
-    vipcmds.gmc:
+    vipcmds.gm:
         default: false
         description: Allow a VIP to use /vip gmc
     vipcmds.fly:
