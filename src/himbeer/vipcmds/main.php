@@ -30,7 +30,7 @@ class Main extends PluginBase implements Listener{
      public function onCommand(CommandSender $sender, Command $command, $label, array $args){
           switch($command->getName()){
                case "vip":
-                    if(!$sender instanceof player){
+                    if(!($sender instanceof player)){
                          $sender->sendMessage("Use this command in-game!");
                     }else{
                          if(!isset($args[0])){
@@ -44,7 +44,7 @@ class Main extends PluginBase implements Listener{
                          }else{
                               switch ($args[0]){
                                    case "gmc":
-                                        if($sender->hasPermisson("vipcmds.gm")){
+                                        if($sender->hasPermission("vipcmds.gm")){
                                              if($sender->getGamemode() == 1){
                                                   $already_in_gamemode = $this->config->get("already_in_gamemode");
                                                   $sender->sendMessage($already_in_gamemode);
@@ -59,7 +59,7 @@ class Main extends PluginBase implements Listener{
                                         }
                                              break;
                                    case "gms":
-                                        if($sender->hasPermisson("vipcmds.gm")){
+                                        if($sender->hasPermission("vipcmds.gm")){
                                              if($sender->getGamemode() == 0){
                                                   $already_in_gamemode = $this->config->get("already_in_gamemode");
                                                   $sender->sendMessage($already_in_gamemode);
@@ -73,22 +73,22 @@ class Main extends PluginBase implements Listener{
                                              $sender->sendMessage($noperm);
                                         }
                                              break;
-#                                   case "fly":
-#                                        if($sender->hasPermisson("vipcmds.fly")){
-#                                             if($sender->getAllowFlight()){
-#                                                  $flyoff = $this->config->get("flyoff")
-#                                                  $sender->sendMessage($flyoff);
-#                                                  $sender->setAllowFlight(false);
-#                                             }else{
-#                                                  $flyon = $this->config->get("flyon")
-#                                                  $sender->sendMessage($flyon);
-#                                                  $sender->setAllowFlight(true);
-#                                             }
-#                                        }else{
-#                                             $noperm = $this->config->get("noperm");
-#                                             $sender->sendMessage($noperm);
-#                                        }
-#                                             break;
+                                   case "fly":
+                                        if($sender->hasPermission("vipcmds.fly")){
+                                             if($sender->getAllowFlight()){
+                                                  $flyoff = $this->config->get("flyoff");
+                                                  $sender->sendMessage($flyoff);
+                                                  $sender->setAllowFlight(false);
+                                             }else{
+                                                  $flyon = $this->config->get("flyon");
+                                                  $sender->sendMessage($flyon);
+                                                  $sender->setAllowFlight(true);
+                                             }
+                                        }else{
+                                             $noperm = $this->config->get("noperm");
+                                             $sender->sendMessage($noperm);
+                                       }
+                                             break;
                               }
                          }
                     }
