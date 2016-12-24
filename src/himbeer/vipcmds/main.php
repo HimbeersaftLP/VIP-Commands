@@ -8,7 +8,7 @@ use pocketmine\Player;
 use pocketmine\permission\Permission;
 use pocketmine\utils\Config;
 use pocketmine\event\player\PlayerGameModeChangeEvent;
-class Main extends PluginBase implements Listener{
+class main extends PluginBase implements Listener{
      
      public function onEnable(){
           $this->getServer()->getPluginManager()->registerEvents($this,$this);
