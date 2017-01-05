@@ -2,7 +2,7 @@ name: VIPcmds
 author: HimbeersaftLP
 main: himbeer\vipcmds\main
 version: 1.0.0
-api: 2.1.0
+api: [2.0.0, 3.0.0, 3.0.0-ALPHA1]
 commands:
     vip:
         description: Main command
