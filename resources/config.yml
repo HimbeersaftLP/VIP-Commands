@@ -1,8 +1,16 @@
-novip: §6Buy VIP now and get the ability to change gamemode and fly!
-vip: §4Usage: /vip gmc|gms|fly
-gmc: Gamemode changed to §bCreative
-gms: Gamemode changed to §aSurvival
-flyon: You can fly now!
-flyoff: You landed!
-noperm: §4You don't have the permission to use this command!
-already_in_gamemode: §4You are already in this gamemode!
+# Message that gets displayed when...
+
+# ...the player doesn't have  the permission vipcmds.vip
+novip: "§6Buy VIP now and get the ability to change gamemode and fly!"
+# ...the player has the permission vipcmds.vip and uses the command without any arguments
+vip: "§4Usage: /vip gmc|gms|fly"
+# ...the player changes his/her gamemode
+gmc: "Gamemode changed to §bCreative"
+gms: "Gamemode changed to §aSurvival"
+# ...the player enables/disables flight
+flyon: "You can fly now!"
+flyoff: "You landed!"
+# ...the player doesn't have the permission for either /vip fly or /vip gm*
+noperm: "§4You don't have the permission to use this command!"
+# ...the player is already in the gamemode he/she wants to change to
+already_in_gamemode: "§4You are already in this gamemode!"

@@ -13,21 +13,10 @@ class main extends PluginBase implements Listener{
      public function onEnable(){
           $this->getServer()->getPluginManager()->registerEvents($this,$this);
           $this->getLogger()->info("VIPcmds enabled!");
-          @mkdir($this->getDataFolder());
-          $this->config = new Config ($this->getDataFolder() . "config.yml" , Config::YAML, array(
-               "novip" => "§6Buy VIP now and get the ability to change gamemode and fly!",
-               "vip" => "§4Usage: /vip gmc|gms|fly",
-               "gmc" => "Gamemode changed to §bCreative",
-               "gms" => "Gamemode changed to §aSurvival",
-               "flyon" => "You can fly now!",
-               "flyoff" => "You landed!",
-               "noperm" => "§4You don't have the permission to use this command!",
-               "already_in_gamemode" => "§4You are already in this gamemode!",
-          ));
-          $this->saveResource("config.yml");
+          $this->saveDefaultConfig();
      }
      
-     public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool{
           switch($command->getName()){
                case "vip":
                     if(!($sender instanceof player)){
@@ -35,10 +24,10 @@ class main extends PluginBase implements Listener{
                     }else{
                          if(!isset($args[0])){
                               if($sender->hasPermission("vipcmds.vip")){
-                                   $vip = $this->config->get("vip");
+                                   $vip = $this->getConfig()->get("vip");
                                    $sender->sendMessage($vip);
                               }else{
-                                   $novip = $this->config->get("novip");
+                                   $novip = $this->getConfig()->get("novip");
                                    $sender->sendMessage($novip);
                               }
                          }else{
@@ -46,46 +35,46 @@ class main extends PluginBase implements Listener{
                                    case "gmc":
                                         if($sender->hasPermission("vipcmds.gm")){
                                              if($sender->getGamemode() == 1){
-                                                  $already_in_gamemode = $this->config->get("already_in_gamemode");
+                                                  $already_in_gamemode = $this->getConfig()->get("already_in_gamemode");
                                                   $sender->sendMessage($already_in_gamemode);
                                              }else{
                                                   $sender->setGamemode(1);
-                                                  $gmc = $this->config->get("gmc");
+                                                  $gmc = $this->getConfig()->get("gmc");
                                                   $sender->sendMessage($gmc);
                                              }
                                         }else{
-                                             $noperm = $this->config->get("noperm");
+                                             $noperm = $this->getConfig()->get("noperm");
                                              $sender->sendMessage($noperm);
                                         }
                                              break;
                                    case "gms":
                                         if($sender->hasPermission("vipcmds.gm")){
                                              if($sender->getGamemode() == 0){
-                                                  $already_in_gamemode = $this->config->get("already_in_gamemode");
+                                                  $already_in_gamemode = $this->getConfig()->get("already_in_gamemode");
                                                   $sender->sendMessage($already_in_gamemode);
                                              }else{
                                                   $sender->setGamemode(0);
-                                                  $gms = $this->config->get("gms");
+                                                  $gms = $this->getConfig()->get("gms");
                                                   $sender->sendMessage($gms);
                                              }
                                         }else{
-                                             $noperm = $this->config->get("noperm");
+                                             $noperm = $this->getConfig()->get("noperm");
                                              $sender->sendMessage($noperm);
                                         }
                                              break;
                                    case "fly":
                                         if($sender->hasPermission("vipcmds.fly")){
                                              if($sender->getAllowFlight()){
-                                                  $flyoff = $this->config->get("flyoff");
+                                                  $flyoff = $this->getConfig()->get("flyoff");
                                                   $sender->sendMessage($flyoff);
                                                   $sender->setAllowFlight(false);
                                              }else{
-                                                  $flyon = $this->config->get("flyon");
+                                                  $flyon = $this->getConfig()->get("flyon");
                                                   $sender->sendMessage($flyon);
                                                   $sender->setAllowFlight(true);
                                              }
                                         }else{
-                                             $noperm = $this->config->get("noperm");
+                                             $noperm = $this->getConfig()->get("noperm");
                                              $sender->sendMessage($noperm);
                                        }
                                              break;
